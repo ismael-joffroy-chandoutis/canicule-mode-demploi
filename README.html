@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  :root{--fg:#1b1b1b;--muted:#6a6a6a;--bg:#fbfaf7;--accent:#7a1f1f;--rule:#e6e2da;--code:#f2efe9;}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;max-width:none;padding:0;background:var(--bg);color:var(--fg);
+    font-family:"Iowan Old Style",Palatino,"Palatino Linotype",Georgia,serif;
+    font-size:19px;line-height:1.72;}
+  .wrap{max-width:1280px;width:92%;margin:0 auto;padding:56px 40px 120px;}
+  h1,h2,h3,h4{line-height:1.25;font-weight:650;letter-spacing:-0.01em;}
+  h1{font-size:2.1rem;margin:0 0 .25em;}
+  h2{font-size:1.45rem;margin:2.4em 0 .6em;padding-top:.5em;border-top:1px solid var(--rule);}
+  h3{font-size:1.15rem;margin:1.8em 0 .4em;}
+  p{margin:0 0 1.1em;}
+  a{color:var(--accent);text-underline-offset:2px;}
+  strong{font-weight:680;}
+  em{color:#333;}
+  blockquote{margin:1.4em 0;padding:.4em 0 .4em 1.2em;border-left:3px solid var(--accent);color:#2a2a2a;}
+  blockquote p{margin:.3em 0;}
+  ul,ol{margin:0 0 1.1em;padding-left:1.4em;}
+  li{margin:.3em 0;}
+  hr{border:0;border-top:1px solid var(--rule);margin:2.6em 0;}
+  code{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:.86em;background:var(--code);padding:.12em .4em;border-radius:4px;}
+  pre{background:var(--code);padding:16px 18px;border-radius:8px;overflow:auto;}
+  pre code{background:none;padding:0;}
+  table{border-collapse:collapse;width:100%;margin:1.4em 0;font-size:.86em;table-layout:auto;}
+  th,td{border:1px solid var(--rule);padding:.45em .6em;text-align:left;vertical-align:top;word-break:break-word;}
+  th{background:#f1ede5;font-weight:650;}
+  .meta{color:var(--muted);font-size:.8rem;margin-top:54px;padding-top:16px;border-top:1px solid var(--rule);}
+  @media (max-width:600px){body{font-size:17px}.wrap{width:100%;padding:40px 18px 80px}}
+  @media (min-width:1500px){.wrap{max-width:1380px}}
+  @media print{body{background:#fff}.wrap{max-width:none}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+<h1 id="se-protéger-de-la-chaleur-en-appartement">Se protéger de la chaleur en appartement</h1>
+<h2 id="guide-factuel-vue-dingénieur-pour-logement-dense-parisien-en-période-de-canicule">Guide factuel, vue d'ingénieur, pour logement dense parisien en période de canicule</h2>
+<p><em>Guide en accès libre, fait pour être copié, imprimé, affiché dans un hall et amélioré. Licence CC BY-SA 4.0. Voir la section « Réutiliser et partager ce guide » en fin de document.</em></p>
+<p>Ce guide rassemble ce que la physique et les sources techniques disent réellement de la chaleur en appartement. Chaque chiffre est daté et sourcé en fin de document. Aucune valeur n'est inventée. Quand une donnée dépend du logement ou du matériel, c'est précisé. Quand une donnée n'existe pas de façon fiable, c'est dit.</p>
+<p>Le but est de garder le signal et d'enlever le bruit : on déboulonne explicitement les idées reçues (le ventilateur qui rafraîchirait l'air, la bouteille glacée qui climatiserait une pièce, les plantes en pot qui feraient baisser la température) avec l'explication physique. Le guide décrit les marges d'action de chacun, sans prendre parti sur les choix individuels.</p>
+<h3 id="ce-que-contient-ce-guide">Ce que contient ce guide</h3>
+<ol type="1">
+<li>Comprendre la chaleur en appartement (la physique simple).</li>
+<li>Les gestes qui marchent, par ordre d'efficacité, avec tableau efficacité/coût.</li>
+<li>Les mythes à oublier, avec l'explication.</li>
+<li>La climatisation, sans tabou : types, efficacité, fluides, réglage, pose, effet collectif, quand elle se justifie.</li>
+<li>Les ordinateurs et l'électronique en canicule.</li>
+<li>Rester ou agir : ce qui dépend de soi, du collectif, du bailleur, de la collectivité, plus les dispositifs existants.</li>
+<li>Sources.</li>
+</ol>
+<h3 id="les-5-messages-clés">Les 5 messages clés</h3>
+<ol type="1">
+<li><strong>Empêcher le soleil d'entrer est le levier numéro un.</strong> Une protection placée à l'extérieur de la fenêtre est environ deux fois plus efficace que la même protection à l'intérieur. Une fenêtre non protégée laisse passer jusqu'à 80 % du rayonnement solaire.</li>
+<li><strong>La nuit, on évacue.</strong> Ouvrir en grand quand l'air extérieur devient plus frais que l'intérieur (souvent après 21 h-22 h et tôt le matin), en créant un courant d'air traversant.</li>
+<li><strong>Un ventilateur ne refroidit pas l'air, il refroidit la peau.</strong> Au-delà d'environ 35 °C d'air, il devient inefficace voire contre-productif, sauf combiné à de l'eau sur le corps.</li>
+<li><strong>Une climatisation déplace la chaleur, elle ne la fait pas disparaître.</strong> Bien réglée (26 °C), elle protège l'individu mais rejette sa chaleur dans la rue. Choisir l'appareil et le réglage change tout.</li>
+<li><strong>Le choix d'installer ou non une climatisation relève de l'arbitrage de chacun.</strong> Ce guide donne les faits pour éclairer ce choix, il ne le tranche pas.</li>
+</ol>
+<hr />
+<h2 id="1-comprendre-la-chaleur-en-appartement">1. Comprendre la chaleur en appartement</h2>
+<p>Un appartement se réchauffe par trois mécanismes physiques.</p>
+<ul>
+<li><strong>Le rayonnement solaire</strong> : le soleil traverse les vitres et chauffe tout ce qu'il touche à l'intérieur. C'est presque toujours le poste numéro un en journée de canicule.</li>
+<li><strong>La conduction</strong> : la chaleur traverse lentement les murs, le plafond et le toit, du chaud vers le froid.</li>
+<li><strong>La convection</strong> : l'air chaud extérieur entre par les ouvertures, les fentes, les défauts d'étanchéité.</li>
+</ul>
+<p>Ordre de grandeur de référence, à garder en tête : une baie vitrée de 2 m² en plein soleil apporte autant de chaleur qu'un radiateur électrique allumé. Une fenêtre non protégée laisse passer jusqu'à 80 % du rayonnement solaire (ADEME).</p>
+<p><strong>Pourquoi un dernier étage chauffe plus.</strong> Sous la toiture, la surface exposée au soleil est maximale et la chaleur du toit rayonne vers le bas dans le logement. La toiture représente 25 à 30 % des déperditions thermiques d'un logement (ADEME) ; en été, un toit non isolé sous le soleil devient une plaque chauffante au-dessus de la tête.</p>
+<p><strong>Pourquoi les vitres exposées chauffent plus.</strong> Le verre est transparent au rayonnement solaire (lumière) mais opaque à l'infrarouge réémis par les objets chauds. C'est l'effet de serre : la lumière entre, chauffe la pièce, et la chaleur reste piégée derrière la vitre. Les façades est et ouest captent le plus de soleil l'été (soleil bas le matin et le soir, qui rentre profondément dans la pièce). Au sud, le soleil estival est haut, donc un simple débord ou un store horizontal suffit souvent.</p>
+<p>Conséquence directe sur l'ordre des actions : <strong>arrêter la chaleur avant qu'elle entre est bien plus efficace que la combattre une fois entrée.</strong> D'où la hiérarchie : occulter le jour, ventiler la nuit, refroidir le corps en dernier recours.</p>
+<hr />
+<h2 id="2-les-gestes-qui-marchent-par-ordre-defficacité">2. Les gestes qui marchent, par ordre d'efficacité</h2>
+<h3 id="21-occultation-extérieure--la-règle-dor">2.1 Occultation extérieure : la règle d'or</h3>
+<p>La physique en une phrase : si l'on arrête le soleil <strong>à l'intérieur</strong> (rideau, store intérieur), le rayonnement a déjà traversé le verre, il a chauffé la pièce, et cette chaleur reste piégée. Si on l'arrête <strong>à l'extérieur</strong>, la chaleur absorbée par le volet ou le store part dans l'air du dehors avant d'atteindre la vitre.</p>
+<p>Les chiffres mesurés :</p>
+<ul>
+<li>Volets ou stores extérieurs fermés réduisent les apports solaires de 60 à 80 %, ce qui peut représenter 3 à 5 °C de moins dans la pièce par rapport à une fenêtre non protégée (ADEME).</li>
+<li>Mesure en conditions réelles, école de Poissy, 31 juillet 2020 : 38 °C dehors, une salle avec store extérieur à 26,9 °C contre 32 °C dans une salle sans store, soit plus de 5 °C d'écart grâce à la seule protection extérieure (Adaptaville/ADEME).</li>
+<li>Combiné à une bonne ventilation nocturne, l'ADEME indique qu'on peut plafonner un séjour autour de 25 à 26 °C alors qu'il fait 38 °C dehors.</li>
+</ul>
+<p>Deux règles pratiques :</p>
+<ul>
+<li><strong>Couleur claire toujours.</strong> Un volet ou store clair réfléchit le rayonnement. Un volet sombre l'absorbe et devient une plaque chaude collée à la façade.</li>
+<li><strong>À tissu égal, l'extérieur l'emporte largement sur l'intérieur.</strong> Pour comparer, les techniciens utilisent le facteur solaire (la fraction d'énergie solaire qui traverse, entre 0 et 1). Un même tissu donne typiquement un facteur de l'ordre de 0,1 à 0,2 en pose extérieure contre 0,4 à 0,55 en pose intérieure : le store intérieur laisse passer environ deux fois plus de chaleur que le même store posé dehors.</li>
+</ul>
+<h3 id="22-badigeon-de-craie-sur-les-vitres-blanc-de-meudon">2.2 Badigeon de craie sur les vitres (blanc de Meudon)</h3>
+<p>C'est la technique maraîchère d'ombrage des serres, à très faible coût. Le blanc de Meudon est une craie naturelle (carbonate de calcium) vendue en poudre. On en fait une pâte fluide qu'on applique au pinceau ou à l'éponge sur la <strong>face extérieure</strong> des vitres.</p>
+<p>Pourquoi ça marche : une couche blanche réfléchit une grande partie du rayonnement solaire avant qu'il ne traverse le verre. C'est une occultation extérieure low-tech, même principe qu'un store clair posé dehors.</p>
+<ul>
+<li>Dosage courant : environ 100 g de poudre pour 50 ml d'eau, en pâte fluide.</li>
+<li>Coût : quelques euros pour traiter plusieurs fenêtres.</li>
+<li>Réversible : ça s'enlève à l'eau, la pluie finit par le rincer. On l'applique en début d'été, on le retire à l'automne.</li>
+</ul>
+<p>Limites : la pièce passe en pénombre laiteuse et la vue est dégradée. Les chiffres précis de baisse de température qui circulent (par exemple « 7 °C de moins ») viennent surtout de blogs et ne reposent pas sur une mesure normalisée ; ils sont à considérer comme des estimations. Le mécanisme, lui, est solide et identique à celui d'un store extérieur clair. Inutile sur une fenêtre déjà protégée par un volet ou store extérieur.</p>
+<h3 id="23-ventilation-nocturne-traversante">2.3 Ventilation nocturne traversante</h3>
+<p>Une fois le soleil bloqué le jour, il faut évacuer la chaleur accumulée pendant la nuit, quand l'air extérieur redevient plus frais que l'air intérieur.</p>
+<p>La règle de timing, non négociable : <strong>on n'ouvre que lorsque la température extérieure est inférieure à l'intérieure.</strong> En canicule, cela se produit typiquement après 21 h-22 h et tôt le matin avant 7 h-8 h (ADEME). Ouvrir en pleine journée caniculaire fait entrer la fournaise.</p>
+<p>La ventilation traversante : ouvrir deux fenêtres sur des façades opposées crée un courant d'air qui balaie tout le volume, bien plus efficace qu'une seule fenêtre. Quand le différentiel extérieur/intérieur est favorable, on observe des baisses de plusieurs degrés en moins d'une heure.</p>
+<p>Ce qui amplifie l'effet :</p>
+<ul>
+<li>Effet cheminée : ouvrir en bas et en haut (ou utiliser la cage d'escalier, une fenêtre de toit) ; l'air chaud monte et s'évacue, l'air frais entre par le bas.</li>
+<li>Ventiler aussi les pièces de nuit et la salle de bains, souvent oubliées, pour purger toute la masse d'air.</li>
+</ul>
+<p>Si le logement n'est pas traversant (toutes les fenêtres du même côté), l'effet est limité. On peut alors ouvrir vers la cage d'escalier si l'air y est plus frais, ou créer un tirage avec un ventilateur orienté vers l'extérieur pour pousser l'air chaud dehors. Cette dernière option dépend en partie du règlement de l'immeuble (porte coupe-feu, sécurité).</p>
+<h3 id="24-pièce-refuge">2.4 Pièce-refuge</h3>
+<p>Plutôt que de tenter de rafraîchir tout le logement, on concentre l'effort sur une pièce, idéalement celle où l'on dort, porte fermée. Plus le volume est petit et clos, plus toute mesure (occultation, ventilation, climatisation éventuelle) est efficace. C'est la stratégie la plus rationnelle quand les moyens sont limités.</p>
+<h3 id="25-refroidir-le-corps">2.5 Refroidir le corps</h3>
+<p>C'est le levier le plus direct et le plus sûr quand l'air est trop chaud pour le reste. L'eau qui s'évapore absorbe beaucoup d'énergie (chaleur latente de vaporisation d'environ 2 260 kJ par kg), prélevée sur la peau.</p>
+<ul>
+<li>Douches ou bains tièdes (pas glacés, qui provoquent un effet rebond), brumisateur, gant ou linge humide sur la nuque, les poignets, le visage, plusieurs fois par jour.</li>
+<li>Brumiser et ventiler en même temps : l'air accélère l'évaporation sur la peau, c'est la combinaison gagnante.</li>
+<li>Boire régulièrement. Le ventilateur augmente la perte d'eau (de l'ordre de 125 g par heure selon des mesures publiées) ; la déshydratation annule tout bénéfice.</li>
+</ul>
+<h3 id="tableau-efficacité--coût-des-gestes-passifs">Tableau efficacité / coût des gestes passifs</h3>
+<table>
+<thead>
+<tr>
+<th>Geste</th>
+<th>Efficacité (ordre de grandeur sourcé)</th>
+<th>Coût</th>
+<th>Lecture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Occultation extérieure (volet/store clair)</td>
+<td>Bloque 60 à 80 % du solaire ; 3 à 5 °C de moins, plus de 5 °C mesurés à Poissy</td>
+<td>15-60 € (voile), 150-1 300 € (store/volet)</td>
+<td>Le levier le plus rentable. Souvent décision bailleur/copropriété</td>
+</tr>
+<tr>
+<td>Badigeon de craie sur la vitre (extérieur)</td>
+<td>Occultation réfléchissante, même principe qu'un store clair</td>
+<td>2-5 €</td>
+<td>Meilleur rapport efficacité/prix sans travaux, au prix de la vue et de la luminosité</td>
+</tr>
+<tr>
+<td>Ventilation nocturne traversante</td>
+<td>Plusieurs degrés en moins de 1 h quand dehors plus frais que dedans</td>
+<td>0 €</td>
+<td>Indispensable et gratuit. Inutile si on ouvre au mauvais moment</td>
+</tr>
+<tr>
+<td>Occultation intérieure (rideau/store clair)</td>
+<td>Environ 2 fois moins efficace que l'extérieur</td>
+<td>20-200 €</td>
+<td>Mieux que rien. Seule option librement posable par un locataire</td>
+</tr>
+<tr>
+<td>Brumisation et linge humide sur le corps</td>
+<td>Refroidit le corps directement par évaporation</td>
+<td>0-15 €</td>
+<td>Le plus sûr quand l'air est trop chaud. À combiner avec un ventilateur</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-les-mythes-à-oublier">3. Les mythes à oublier</h2>
+<h3 id="mythe-1--le-ventilateur-rafraîchit-lair-de-la-pièce">Mythe 1 : le ventilateur rafraîchit l'air de la pièce</h3>
+<p>Faux. Un ventilateur ne baisse pas la température de l'air, il le brasse. Son moteur ajoute même un tout petit peu de chaleur. Le seul effet rafraîchissant est sur la peau : le flux d'air accélère l'évaporation de la sueur, ce qui crée une sensation de fraîcheur. L'effet est estimé à 2 à 3 °C de température ressentie en moins (ADEME), sur le corps, pas sur le thermomètre. Dans une pièce vide, il ne sert à rien et la réchauffe très légèrement.</p>
+<p>Le piège de la canicule : tant que l'air est plus frais que la peau (environ 35 °C), brasser l'air retire de la chaleur du corps. Au-delà, le ventilateur pousse vers le corps de l'air plus chaud que la peau et accélère la déshydratation sans signal d'alerte. Santé publique France qualifie le ventilateur d'inefficace, voire contre-productif, au-delà de 35 °C. L'Organisation mondiale de la santé recommande de ne l'utiliser qu'en dessous de 40 °C (au-delà, les ventilateurs réchauffent le corps). Entre 35 et 40 °C, il n'aide que combiné à de l'eau sur la peau (brumisation, linge humide). La nuance sèche/humide compte : en air très sec et très chaud, le bénéfice disparaît plus tôt ; pour les personnes âgées, il s'efface dès 33 à 35 °C selon des études publiées.</p>
+<h3 id="mythe-2--une-bouteille-glacée-ou-un-bac-de-glaçons-climatise-la-pièce">Mythe 2 : une bouteille glacée ou un bac de glaçons climatise la pièce</h3>
+<p>Faux à l'échelle d'une pièce. Calcul simple : fondre 1 kg de glace absorbe environ 334 kJ (chaleur latente de fusion de l'eau, constante physique). Une bouteille d'environ 1 litre qui fond en 2 heures fournit donc une puissance de refroidissement moyenne d'environ 46 W. À comparer à un climatiseur mobile qui délivre 2 000 à 3 500 W de froid : la bouteille fournit moins de 2 % de la puissance d'une climatisation. Et la pièce reçoit en journée plusieurs centaines à plus de mille watts par les fenêtres. 46 W ne peuvent rien contre cela. En prime, la glace condense l'humidité de l'air et humidifie la pièce.</p>
+<p>Le seul usage utile : placer la glace devant un ventilateur, près de soi, pour rafraîchir le flux d'air sur la peau, localement et brièvement, le temps de s'endormir. Ce n'est pas une climatisation.</p>
+<h3 id="mythe-3--les-plantes-en-pot-font-baisser-la-température-de-la-pièce">Mythe 3 : les plantes en pot font baisser la température de la pièce</h3>
+<p>Très marginal en intérieur. Une plante refroidit par évapotranspiration (elle évapore de l'eau, ce qui consomme de la chaleur). Une grande plante d'intérieur évapore au mieux de l'ordre de 1 litre par jour. Ce litre par jour correspond à une puissance de refroidissement moyenne d'environ 26 W, pour une grande plante. À comparer aux quelque 1 000 W qui entrent par une seule baie vitrée ensoleillée : une plante compense environ 2,5 % de l'apport d'une fenêtre. Il en faudrait des dizaines pour un effet d'un degré, et leur transpiration augmenterait l'humidité.</p>
+<p>À retenir : une plante en pot n'abaisse pas mesurablement la température d'une pièce et ne remplace pas un volet fermé. En revanche, des arbres et de la végétation à l'extérieur (ombrage de façade, balcon, rue arborée) rafraîchissent réellement, car ils bloquent le soleil avant qu'il entre et agissent sur un grand volume d'air ouvert.</p>
+<h3 id="mythe-4--mettre-la-climatisation-très-bas-refroidit-plus-vite">Mythe 4 : mettre la climatisation très bas refroidit plus vite</h3>
+<p>Faux et coûteux. La vitesse de refroidissement dépend de la puissance de l'appareil, pas de la consigne. Régler 18 °C ne refroidit pas plus vite que 26 °C : cela fait juste tourner l'appareil plus longtemps et plus cher (environ 7 % de consommation en plus par degré), avec un risque de choc thermique.</p>
+<h3 id="mythe-5--on-garde-les-volets-fermés-en-permanence">Mythe 5 : on garde les volets fermés en permanence</h3>
+<p>À moitié faux. Fermer le jour, oui. Mais tout garder fermé la nuit empêche d'évacuer la chaleur accumulée, et la pièce reste chaude au matin. La bonne pratique est l'alternance : occulter le jour, ouvrir et ventiler la nuit.</p>
+<hr />
+<h2 id="4-la-climatisation-sans-tabou">4. La climatisation, sans tabou</h2>
+<p>Une idée structure tout le reste : un climatiseur ne fabrique pas du froid, il <strong>déplace de la chaleur</strong>. Il prend la chaleur d'un côté (la pièce) et la rejette de l'autre (la rue). C'est une pompe à chaleur qui tourne en sens froid. Cette phrase résout la moitié des malentendus : la chaleur extraite doit partir quelque part, donc un appareil qui n'évacue rien dehors ne peut pas refroidir une pièce, et la chaleur rejetée dehors ne disparaît pas.</p>
+<h3 id="41-les-types-dappareils">4.1 Les types d'appareils</h3>
+<p><strong>Monobloc mobile (une seule gaine).</strong> Tout est dans un boîtier roulant ; une gaine sort par la fenêtre pour évacuer l'air chaud. Défaut physique majeur, souvent mal compris : pour rejeter l'air chaud, l'appareil aspire l'air de la pièce et le souffle dehors. Cet air doit être remplacé, et il l'est par de l'air chaud extérieur qui s'infiltre par les fentes. L'appareil crée une dépression qui appelle l'air chaud du dehors. Conséquence pratique décisive : <strong>calfeutrer la gaine avec un kit d'étanchéité sur la fenêtre conditionne le rendement réel</strong>. Sans cela, une partie du froid produit sert à refroidir l'air chaud qui vient d'entrer.</p>
+<p><strong>Split mobile (deux éléments reliés, sur roulettes).</strong> Le compresseur et le condenseur sont déportés dans un module posé au balcon, relié par un tuyau souple à l'unité intérieure mobile. Pas de gaine soufflant l'air de la pièce dehors, donc pas ou peu de dépression. Plus performant et plus silencieux qu'un monobloc, mais plus cher et plus encombrant. Catégorie de niche.</p>
+<p><strong>Split fixe mural (installé par un professionnel).</strong> Unité intérieure murale et unité extérieure fixe, reliées par un circuit frigorifique scellé. Aucune gaine d'air, aucune dépression. C'est l'installation la plus performante et la plus silencieuse côté pièce, mais elle suppose de percer le mur et de poser une unité en façade, ce qui exige l'accord du bailleur et souvent de la copropriété.</p>
+<h3 id="42-efficacité">4.2 Efficacité</h3>
+<p>La hiérarchie est claire : <strong>split fixe supérieur au split mobile, lui-même supérieur au monobloc.</strong></p>
+<ul>
+<li>Un climatiseur mobile peut consommer jusqu'à 2,5 fois plus qu'une climatisation fixe (ADEME). À puissance égale, un mobile consomme de l'ordre de 30 à 50 % de plus qu'un split fixe.</li>
+<li>Les appareils mobiles affichent souvent l'EER (efficacité instantanée). Le split fixe se juge sur le SEER (efficacité saisonnière), indicateur plus honnête. Repère : un SEER de 6 signifie 6 kWh de froid produits pour 1 kWh consommé. La classe A++ correspond à un SEER d'environ 6,1 à 8,5.</li>
+<li>La technologie Inverter (modulation du compresseur) apporte une régulation fine et des économies par rapport à un appareil tout-ou-rien (ADEME).</li>
+</ul>
+<p>Ordres de grandeur de consommation, à ajuster selon le tarif et la durée d'usage : l'ADEME chiffre un climatiseur mobile autour de 710 kWh par an, soit environ 140 € par an en usage typique. Les coûts horaires souvent cités (de l'ordre de 0,20 € par heure pour un mobile, 0,17 € par heure pour un split fixe A++) proviennent de sources commerciales et sont à prendre comme ordres de grandeur.</p>
+<p>Côté bruit, les sources sont commerciales et divergent un peu : un monobloc se situe en général entre 55 et 70 dB, parce que le compresseur est dans la pièce ; un split (mobile ou fixe) descend nettement plus bas, souvent 30 à 45 dB, car le compresseur est dehors.</p>
+<h3 id="43-fluides-et-pollution--ce-que--ça-pollue--veut-dire">4.3 Fluides et pollution : ce que « ça pollue » veut dire</h3>
+<p>Le fluide frigorigène transporte la chaleur dans le circuit. On le classe par son potentiel de réchauffement global (PRG, ou GWP), c'est-à-dire combien de fois il réchauffe plus que le CO2 (dont le PRG vaut 1).</p>
+<table>
+<thead>
+<tr>
+<th>Fluide</th>
+<th>PRG</th>
+<th>Équivalent d'1 kg qui fuit</th>
+<th>Statut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R290 (propane)</td>
+<td>environ 3</td>
+<td>environ 3 kg de CO2</td>
+<td>Le plus vertueux ; inflammable, donc charges limitées</td>
+</tr>
+<tr>
+<td>R32</td>
+<td>environ 675</td>
+<td>environ 675 kg de CO2</td>
+<td>Standard actuel ; environ 68 % de gaz à effet de serre en moins que le R410A</td>
+</tr>
+<tr>
+<td>R410A</td>
+<td>environ 2 088</td>
+<td>plus de 2 tonnes de CO2</td>
+<td>Ancien standard ; interdit à l'installation neuve depuis le 1er janvier 2025</td>
+</tr>
+</tbody>
+</table>
+<p>Ce que « ça pollue » veut dire concrètement, ce n'est pas l'air soufflé par l'appareil, mais : les fuites éventuelles de fluide (le poste le plus puissant en cas d'incident), l'électricité consommée par le compresseur, la fabrication de l'appareil et sa fin de vie (le fluide doit être récupéré, jamais relâché).</p>
+<p>Une climatisation correctement posée, dont le circuit est scellé et étanche, ne fuit pas en usage normal. Les fuites viennent d'une mauvaise pose, d'un choc, d'une corrosion ou d'un défaut. C'est pourquoi la réglementation européenne sur les gaz fluorés impose des contrôles d'étanchéité pour les équipements au-delà d'un certain volume de fluide, et la récupération obligatoire du fluide à toute intervention ou en fin de vie.</p>
+<p>Trajectoire réglementaire : depuis le 1er janvier 2025, les monosplits de faible puissance contenant un fluide à PRG élevé sont interdits à la vente neuve, ce qui écarte le R410A. Au 1er janvier 2029, le seuil descend vers un PRG d'environ 150, ce qui écartera aussi le R32 du résidentiel standard au profit des fluides naturels comme le R290. À l'achat, privilégier un appareil au R290, à défaut au R32, jamais au R410A (de toute façon plus vendu neuf).</p>
+<h3 id="44-à-quelle-température-régler">4.4 À quelle température régler</h3>
+<p>Recommandation ADEME : ne pas descendre sous 26 °C, et conserver un écart maximal de 5 à 7 °C avec l'extérieur. Deux raisons cumulées :</p>
+<ul>
+<li>Consommation : chaque degré en moins coûte environ 7 % de plus. Régler 24 plutôt que 26, c'est environ 14 % de consommation en plus pour un confort que le corps distingue à peine quand l'humidité est maîtrisée.</li>
+<li>Santé : au-delà de 5 à 7 °C d'écart entre dehors et dedans, le corps subit un choc thermique en passant d'un milieu à l'autre, avec un risque pour les personnes fragiles, âgées ou cardiaques.</li>
+</ul>
+<p>Le bon réglage est 26 °C, quitte à ajouter un brassage d'air léger (un ventilateur fait ressentir 1 à 2 °C de moins sans refroidir l'air).</p>
+<h3 id="45-pose-optimale">4.5 Pose optimale</h3>
+<p>Du plus efficace au moins :</p>
+<ol type="1">
+<li>Occulter avant de climatiser. Climatiser une pièce où le soleil entre directement, c'est lutter contre un radiateur allumé.</li>
+<li>Une seule pièce-refuge, porte fermée. Concentrer l'appareil sur un petit volume clos.</li>
+<li>Calfeutrer la gaine d'un monobloc, opération non négociable pour supprimer la dépression et l'entrée d'air chaud.</li>
+<li>Entretenir les filtres : un nettoyage tous les 6 mois pour un appareil individuel ; un filtre propre, c'est jusqu'à 10 % de consommation en moins (ADEME).</li>
+<li>Pour un split fixe : pose par un professionnel certifié (manipulation du fluide réglementée), unité extérieure ventilée et à l'ombre si possible, et autorisation préalable du bailleur et de la copropriété.</li>
+</ol>
+<h3 id="46-leffet-collectif--la-climatisation-réchauffe-la-rue">4.6 L'effet collectif : la climatisation réchauffe la rue</h3>
+<p>C'est de la physique, pas un jugement. La chaleur extraite d'une pièce est rejetée dans la rue. Quand beaucoup d'appareils le font en même temps, la rue se réchauffe mesurablement. Mesures de référence à Paris (étude de Munck et collègues, 2013) :</p>
+<ul>
+<li>Avec le parc de climatiseurs de l'époque, la chaleur rejetée augmente la température de l'air des rues d'environ 0,5 °C.</li>
+<li>Si toute cette chaleur était rejetée sous forme d'air chaud sec, l'effet monterait à environ 1 °C.</li>
+<li>Dans le scénario d'un doublement du parc de climatiseurs, jusqu'à environ 2 °C dans les rues.</li>
+<li>L'effet est plus fort la nuit que le jour, or ce sont les nuits chaudes qui pèsent le plus sur la santé.</li>
+</ul>
+<p>Pour situer, l'îlot de chaleur urbain de Paris est déjà de l'ordre de plusieurs degrés en moyenne entre la ville et la campagne, avec des écarts nocturnes ponctuels pouvant dépasser 10 °C (Météo-France). Le CEREMA qualifie pour cette raison la climatisation de « mal-adaptation » : elle protège l'individu à l'intérieur tout en aggravant le problème collectif à l'extérieur. À l'inverse, une étude du CNRS (2020) estime qu'à Paris des mesures combinées (végétalisation, isolation, toits réfléchissants, usage modéré de la climatisation) permettraient une réduction notable de la température par rapport à un scénario tout-climatisation.</p>
+<p>Conclusion factuelle : la climatisation transfère la chaleur de chez soi vers la rue, et un peu vers les voisins. C'est un arbitrage réel, à connaître.</p>
+<h3 id="47-quand-la-climatisation-se-justifie">4.7 Quand la climatisation se justifie</h3>
+<p>Pour raison sanitaire :</p>
+<ul>
+<li>Personnes vulnérables : personnes âgées, nourrissons, malades chroniques, personnes cardiaques ou sous traitement, femmes enceintes. Pour elles, la chaleur extrême est un risque vital.</li>
+<li>Nuits tropicales répétées (température ne descendant pas sous environ 20 °C) : le corps ne récupère pas, le sommeil et les fonctions cognitives se dégradent. Une pièce-refuge climatisée à 26 °C est alors une mesure de santé.</li>
+<li>Pics de canicule où les mesures passives ne suffisent plus à tenir l'intérieur sous un seuil supportable.</li>
+</ul>
+<p>Dans ces cas, une climatisation bien réglée (26 °C, fluide R290, gaine calfeutrée, une seule pièce) vaut mieux qu'un risque sanitaire. Hors de ces cas, les mesures passives suffisent souvent, coûtent moins et ne réchauffent pas la rue.</p>
+<h3 id="tableau-comparatif-des-climatiseurs">Tableau comparatif des climatiseurs</h3>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Monobloc mobile</th>
+<th>Split mobile</th>
+<th>Split fixe mural</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principe</td>
+<td>Tout en un, gaine par la fenêtre</td>
+<td>Unité intérieure mobile + module dehors</td>
+<td>Unités intérieure et extérieure, circuit scellé</td>
+</tr>
+<tr>
+<td>Efficacité</td>
+<td>La plus faible (jusqu'à 2,5 fois la conso d'un fixe)</td>
+<td>Intermédiaire</td>
+<td>La meilleure (SEER élevé, Inverter)</td>
+</tr>
+<tr>
+<td>Défaut clé</td>
+<td>Dépression, gaine à calfeutrer</td>
+<td>Encombrement, niche</td>
+<td>Travaux et autorisation requis</td>
+</tr>
+<tr>
+<td>Bruit (pièce)</td>
+<td>Élevé : 55-70 dB</td>
+<td>Faible : 30-45 dB</td>
+<td>Le plus faible</td>
+</tr>
+<tr>
+<td>Coût achat</td>
+<td>Le plus bas (flambée en canicule)</td>
+<td>Intermédiaire</td>
+<td>800-2 000 € pose comprise</td>
+</tr>
+<tr>
+<td>Coût usage</td>
+<td>Le plus élevé</td>
+<td>Intermédiaire</td>
+<td>Le plus bas</td>
+</tr>
+<tr>
+<td>Travaux/autorisation</td>
+<td>Aucun (prise + fenêtre)</td>
+<td>Léger (module au balcon)</td>
+<td>Oui : perçage façade + accord bailleur/copro</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-les-ordinateurs-et-lélectronique-en-canicule">5. Les ordinateurs et l'électronique en canicule</h2>
+<p>Un point contre-intuitif mais central : <strong>une machine puissante est un radiateur.</strong> La quasi-totalité de l'électricité consommée par un ordinateur ressort en chaleur dans la pièce (premier principe de la thermodynamique, effet Joule). Un PC qui tire 500 W au mur chauffe la pièce autant qu'un radiateur de 500 W. Ce n'est pas une question de marque.</p>
+<p>Ordres de grandeur, du plus sobre au plus chaud :</p>
+<table>
+<thead>
+<tr>
+<th>Appareil</th>
+<th>Puissance / chaleur typique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Box internet en veille</td>
+<td>environ 7 à 15 W</td>
+</tr>
+<tr>
+<td>Petit ordinateur de bureau au repos</td>
+<td>quelques watts (par exemple 4 W)</td>
+</tr>
+<tr>
+<td>Portable bureautique</td>
+<td>environ 50 W</td>
+</tr>
+<tr>
+<td>PC fixe bureautique</td>
+<td>environ 150 W</td>
+</tr>
+<tr>
+<td>Carte graphique haut de gamme à pleine charge</td>
+<td>450 à 575 W selon le modèle</td>
+</tr>
+</tbody>
+</table>
+<p>Une station de travail avec une carte graphique haut de gamme peut donc dissiper plusieurs centaines de watts dans la pièce, équivalent d'un petit radiateur soufflant allumé en permanence.</p>
+<p>Ce que la chaleur fait aux machines :</p>
+<ul>
+<li><strong>Bridage thermique (throttling).</strong> Un processeur ou une carte graphique qui chauffe trop réduit volontairement sa fréquence pour produire moins de chaleur. La machine devient plus lente. Les processeurs commencent à se brider vers 95 à 100 °C de température de puce, les cartes graphiques vers 83 à 87 °C. La température de la pièce s'ajoute à celle de la puce : plus l'air est chaud, plus la puce atteint son plafond vite.</li>
+<li><strong>Instabilité.</strong> Au-delà du bridage, une machine en surchauffe peut se figer, redémarrer ou s'éteindre en sécurité. Ce sont des protections normales.</li>
+<li><strong>Cas des portables sans ventilateur.</strong> Un portable fanless n'a qu'un levier une fois le châssis saturé : ralentir la puce. Sous charge soutenue, la dégradation est progressive et peut atteindre plusieurs dizaines de pour cent de performance en moins par rapport à une machine ventilée. C'est le pire choix pour une tâche longue par forte chaleur.</li>
+<li><strong>Batteries lithium-ion.</strong> C'est le composant que la chaleur abîme le plus, de façon irréversible. La combinaison chaleur élevée et charge à 100 % est le pire cas : l'électrolyte se dégrade d'autant plus vite. La règle d'Arrhenius indique qu'une hausse de quelques degrés accélère sensiblement le vieillissement. Le seuil exact de gonflement dépend de la cellule et n'est pas généralisable. Recommandation usuelle pour stocker une batterie : autour de 40 à 60 % de charge, dans un endroit frais (10 à 25 °C). Éviter de charger à 100 % en plein soleil.</li>
+<li><strong>Disques.</strong> Pour les disques mécaniques (NAS, vieux PC), la chaleur reste un facteur de vieillissement, avec des plages constructeur en général de 5 à 55 °C dont la fiabilité se dégrade dans le haut. Les disques à semi-conducteurs sont plus tolérants mais peuvent aussi brider en cas de surchauffe.</li>
+</ul>
+<p>La double peine de la canicule : la machine chauffe la pièce, et la pièce chaude empêche la machine de se refroidir, donc elle bride et perd des performances.</p>
+<p>Conseils, du plus efficace au moins :</p>
+<ol type="1">
+<li>Décaler les tâches lourdes (rendu, calcul, sauvegardes, gros téléchargements, jeu exigeant) aux heures fraîches, la nuit ou tôt le matin.</li>
+<li>Limiter la puissance (power limit). Sur une carte graphique, plafonner la consommation à environ 80 % réduit fortement la chaleur pour une perte de performance modeste (de l'ordre de quelques pour cent). Moins de watts consommés, c'est mécaniquement moins de watts de chaleur dans la pièce.</li>
+<li>Dépoussiérer filtres et ventilateurs : la poussière isole et bouche les flux d'air.</li>
+<li>Dégager les entrées et sorties d'air, ne rien coller contre les grilles, laisser de l'espace derrière une tour.</li>
+<li>Ne pas poser un portable sur une surface molle (lit, coussin) qui obstrue les aérations.</li>
+<li>Pour les batteries, éviter la combinaison chaud et 100 %. Beaucoup d'appareils proposent un plafond de charge à 80 %, utile en période chaude.</li>
+<li>Placer onduleur et NAS, qui tournent en continu, dans la zone la plus fraîche et aérée, jamais dans un placard fermé.</li>
+</ol>
+<p>Un point qui recoupe les mythes du chapitre 3 : ajouter des ventilateurs internes ou un meilleur refroidissement aide la machine (moins de bridage) mais ne refroidit jamais la pièce. Tout ventilateur ou refroidisseur à air dans une pièce fermée ajoute de la chaleur à la pièce. Seul un climatiseur qui évacue l'air chaud vers l'extérieur refroidit réellement une pièce.</p>
+<h3 id="gérer-ses-machines-au-quotidien-pas-seulement-en-canicule">Gérer ses machines au quotidien, pas seulement en canicule</h3>
+<p>La canicule n'est qu'un cas extrême de règles valables toute l'année. Les appliquer en continu réduit la facture et prolonge la durée de vie du matériel.</p>
+<ul>
+<li><strong>Sobriété</strong> : une machine puissante consomme et chauffe en proportion. Éteindre ou mettre en veille ce qui ne sert pas, regrouper les tâches lourdes plutôt que laisser tout tourner en fond.</li>
+<li><strong>Flux d'air</strong> : dépoussiérer filtres et ventilateurs régulièrement, dégager les grilles, surélever les tours, ne jamais enfermer dans un meuble clos un appareil qui tourne en continu (box, NAS, console).</li>
+<li><strong>Batteries</strong> : éviter de laisser un appareil branché à 100 % en permanence et au chaud. Viser un usage entre 20 et 80 % de charge prolonge nettement la durée de vie.</li>
+<li><strong>Sauvegardes</strong> : une panne par surchauffe peut corrompre des données. Garder une sauvegarde séparée et régulière.</li>
+<li><strong>Placement</strong> : l'appareil le plus chaud (tour de jeu, station de calcul) gagne à être dans la pièce la moins occupée, surtout l'été.</li>
+</ul>
+<p>En clair, ce qui protège les machines de la canicule prolonge aussi leur durée de vie le reste de l'année.</p>
+<hr />
+<h2 id="6-rester-ou-agir--qui-a-la-main-sur-quoi">6. Rester ou agir : qui a la main sur quoi</h2>
+<p>Ce découpage décrit les marges d'action de chacun. Savoir qui a la main sur quel levier aide à orienter sa demande au bon interlocuteur. Le choix de compter sur tel ou tel acteur relève de chacun.</p>
+<h3 id="ce-que-peut-faire-un-locataire-sans-autorisation">Ce que peut faire un locataire, sans autorisation</h3>
+<ul>
+<li>Utiliser les protections existantes : fermer volets et stores le jour, ouvrir et ventiler la nuit.</li>
+<li>Poser une occultation intérieure (rideau, store), un voile d'ombrage sur un balcon privatif non fixé à la façade, un badigeon de craie sur ses vitres.</li>
+<li>Calfeutrer les fuites d'air (bas de porte, joints de fenêtre) avec joints adhésifs.</li>
+<li>Utiliser un climatiseur mobile (objet, pas travaux), sous réserve du règlement de l'immeuble, en gérant ses attentes sur le rendement.</li>
+<li>Refroidir le corps : brumisation, linge humide, hydratation, ventilateur dans les seuils utiles.</li>
+<li>Documenter une surchauffe anormale (relevés de température datés, photos), utile pour toute demande au bailleur.</li>
+<li>S'inscrire, ou inscrire un voisin vulnérable, au registre des personnes fragiles de la mairie, et repérer le lieu rafraîchi le plus proche.</li>
+</ul>
+<h3 id="ce-qui-relève-du-collectif">Ce qui relève du collectif</h3>
+<ul>
+<li>L'amicale de locataires est l'interlocuteur organisé du bailleur social ; une demande collective de travaux de confort d'été (isolation de toiture, brise-soleil, toiture réfléchissante) est généralement mieux relayée qu'une demande isolée.</li>
+<li>Achats groupés de protections solaires mobiles ou de matériel.</li>
+<li>En copropriété privée, porter le sujet à l'ordre du jour de l'assemblée générale et demander un audit.</li>
+</ul>
+<h3 id="ce-qui-relève-du-bailleur-de-la-copropriété-de-la-collectivité">Ce qui relève du bailleur, de la copropriété, de la collectivité</h3>
+<ul>
+<li>Les travaux lourds sur le bâti (isolation de toiture et de combles, protections solaires extérieures fixes, toiture réfléchissante, isolation de façade, fenêtres, végétalisation) relèvent du bailleur en parc social ou de l'assemblée générale en copropriété. Le locataire demande et signale, il ne réalise pas.</li>
+<li>La pose d'un volet ou store extérieur modifie l'aspect de la façade : elle suppose l'accord de l'assemblée générale en copropriété, l'accord écrit du bailleur en parc social, et parfois une autorisation d'urbanisme en secteur patrimonial.</li>
+<li>Le confort d'été est désormais pris en compte dans la réglementation du logement (notion de décence, intégration au diagnostic de performance énergétique). Un bailleur doit traiter les causes techniques avérées (ventilation en panne, fenêtres non étanches, toiture non isolée, absence d'occultation sur une exposition anormale). En cas de litige, les recours sont gradués : demande documentée, conciliation, puis le cas échéant tribunal. La climatisation fixe, en revanche, n'est pas une obligation exigible, et il ne faut jamais cesser de payer le loyer sans décision de justice.</li>
+<li>Les espaces de fraîcheur publics, les plans canicule, la végétalisation urbaine relèvent de la collectivité.</li>
+</ul>
+<h3 id="rénovation-du-bâti--les-leviers-du-plus-au-moins-efficace">Rénovation du bâti : les leviers, du plus au moins efficace</h3>
+<p>Pour un dernier étage, l'ordre rationnel est le suivant.</p>
+<ul>
+<li><strong>Protections solaires extérieures sur les fenêtres</strong> : levier le plus accessible et très efficace (jusqu'à 95 à 97 % du rayonnement bloqué selon les dispositifs). Pose décidée par le bailleur ou la copropriété.</li>
+<li><strong>Isolation de la toiture et des combles</strong> : clé pour un dernier étage. Deux notions d'ingénieur, l'inertie (capacité à stocker et lisser les pics de chaleur) et le déphasage (temps que met la chaleur à traverser l'isolant, idéalement assez long pour que le pic arrive la nuit, où l'on peut évacuer). Décision et financement du bailleur ou de l'assemblée générale.</li>
+<li><strong>Toiture réfléchissante (cool roof)</strong> : peinture claire à fort albédo en toiture. Efficace surtout au dernier étage peu isolé (gains de température intérieure de l'ordre de 2 à 6 °C selon les opérations), à nuancer ailleurs (léger surcoût de chauffage l'hiver, salissures qui réduisent l'effet, bilan économique variable). Décidé par le bailleur ou la copropriété.</li>
+<li><strong>Toiture ou terrasse végétalisée</strong> : apporte inertie, ombre et rafraîchissement, plus un bénéfice de quartier. Lourd (charge, étanchéité, entretien), décision bailleur ou copropriété.</li>
+<li><strong>Isolation de façade et fenêtres</strong> : surtout utiles au confort d'hiver ; en été, la fenêtre compte d'abord par sa protection solaire.</li>
+</ul>
+<h3 id="dispositifs-et-aides-état-général-à-reconfirmer-au-cas-par-cas">Dispositifs et aides (état général, à reconfirmer au cas par cas)</h3>
+<p>Point clé : les aides à la rénovation pour particuliers (MaPrimeRénov' et équivalents) s'adressent aux propriétaires occupants, bailleurs privés et copropriétés, pas aux locataires ni au parc social, qui a son propre circuit via le bailleur et les soutiens de la collectivité et de l'État.</p>
+<ul>
+<li>MaPrimeRénov' et son volet copropriété financent l'isolation des combles, toiture, murs et planchers en parties communes, sous conditions d'éligibilité de la copropriété.</li>
+<li>Les certificats d'économie d'énergie (primes versées par les fournisseurs d'énergie) sont cumulables avec ces aides.</li>
+<li>À Paris, des dispositifs d'accompagnement et de subvention pour les copropriétés existent, avec des volets dédiés aux fortes chaleurs (végétalisation, désimperméabilisation, récupérateurs d'eau, matériaux biosourcés).</li>
+<li>En parc social, la rénovation passe par le bailleur, soutenu par la Ville et l'État.</li>
+<li>En logement social, l'installation d'une climatisation fixe est soumise à l'accord écrit du bailleur, car elle modifie le bâti.</li>
+<li>En période de canicule, la collectivité active un plan dédié : lieux rafraîchis recensés et accessibles, espaces climatisés dans des équipements publics, registre des personnes vulnérables (visites, appels, prêt de ventilateurs), parcs ouverts plus tard.</li>
+</ul>
+<p>Les barèmes des aides et le niveau des plans canicule évoluent ; les modalités sont à reconfirmer auprès des guichets officiels.</p>
+<h3 id="pourquoi-le-sujet-va-sintensifier">Pourquoi le sujet va s'intensifier</h3>
+<p>Le climat parisien s'est déjà réchauffé de l'ordre de 2 °C par rapport à l'ère préindustrielle. Les projections (Météo-France, Ville de Paris) indiquent, d'ici 2050, un nombre de jours de forte chaleur et de nuits tropicales en forte hausse par rapport à la période récente. Les nuits tropicales empêchent le corps de récupérer et réduisent l'efficacité de la ventilation nocturne.</p>
+<p>Lecture d'ingénieur : à mesure que la fenêtre de ventilation nocturne se réduit, les leviers passifs sur le bâti (isolation de toiture, protections solaires extérieures, toiture réfléchissante au dernier étage) gagnent en valeur. Une séquence possible, selon les leviers accessibles : utiliser ou obtenir des protections solaires extérieures et la ventilation nocturne (effet immédiat), porter une demande collective de travaux de confort d'été au bailleur via l'amicale (effet à moyen terme), s'appuyer sur le statut de décence et les recours si le bâti présente des défauts techniques avérés.</p>
+<hr />
+<h2 id="7-sources">7. Sources</h2>
+<p>Climatisation, efficacité, réglage, entretien, fluides :</p>
+<ul>
+<li>ADEME, Comment choisir sa climatisation : <a href="https://agirpourlatransition.ademe.fr/particuliers/amenager-maison/climatiser-rafraichir/bien-choisir-climatisation">https://agirpourlatransition.ademe.fr/particuliers/amenager-maison/climatiser-rafraichir/bien-choisir-climatisation</a></li>
+<li>ENGIE, Climatiseur mobile, avantages et inconvénients : <a href="https://particuliers.engie.fr/economies-energie/conseils-equipements-chauffage/conseils-installation-climatisation/climatiseur-mobile.html">https://particuliers.engie.fr/economies-energie/conseils-equipements-chauffage/conseils-installation-climatisation/climatiseur-mobile.html</a></li>
+<li>Espace Aubade, Climatiseur mobile split vs monobloc : <a href="https://www.espace-aubade.fr/fiche-conseil/climatiseur-mobile-split-vs-climatiseur-mobile-monobloc.html">https://www.espace-aubade.fr/fiche-conseil/climatiseur-mobile-split-vs-climatiseur-mobile-monobloc.html</a></li>
+<li>Chauffage-et-climatisation.fr, Monobloc vs split mobile : <a href="https://www.chauffage-et-climatisation.fr/guide-achat/climatisation-mobile-monobloc-vs-split-trouvez-le-modele-ideal-pour-votre-confort/">https://www.chauffage-et-climatisation.fr/guide-achat/climatisation-mobile-monobloc-vs-split-trouvez-le-modele-ideal-pour-votre-confort/</a></li>
+<li>GroupSolar, Climatiseur mobile, fonctionnement : <a href="https://groupsolar.fr/climatiseur-mobile-fonctionnement-modeles-reglages/">https://groupsolar.fr/climatiseur-mobile-fonctionnement-modeles-reglages/</a></li>
+<li>Habitatpresto, Climatiseur monobloc, fonctionnement : <a href="https://www.habitatpresto.com/mag/climatisation/fonctionnement-installation-climatiseur-monobloc">https://www.habitatpresto.com/mag/climatisation/fonctionnement-installation-climatiseur-monobloc</a></li>
+<li>Que Choisir, Guide d'achat climatiseur mobile : <a href="https://www.quechoisir.org/guide-d-achat-climatiseur-mobile-n43920/">https://www.quechoisir.org/guide-d-achat-climatiseur-mobile-n43920/</a></li>
+<li>Clim-reversible.fr, Climatiseur split : <a href="https://www.clim-reversible.fr/climatiseur-split/">https://www.clim-reversible.fr/climatiseur-split/</a></li>
+<li>Homeserve, Consommation électrique climatisation : <a href="https://www.homeserve.fr/conseils-actualites/chauffage/consommation-electrique-climatisation">https://www.homeserve.fr/conseils-actualites/chauffage/consommation-electrique-climatisation</a></li>
+<li>Climfactory, Étiquette énergétique climatiseur (SEER) : <a href="https://climfactory.com/blog/post/comprendre-une-etiquette-energetique-d-un-climatiseur.html">https://climfactory.com/blog/post/comprendre-une-etiquette-energetique-d-un-climatiseur.html</a></li>
+<li>La Belle Énergie, À quelle température régler la climatisation : <a href="https://labellenergie.fr/a-quelle-temperature-regler-votre-climatisation/">https://labellenergie.fr/a-quelle-temperature-regler-votre-climatisation/</a></li>
+<li>Que Choisir, Climatiseur, attention au choc thermique : <a href="https://www.quechoisir.org/actualite-climatiseur-attention-au-choc-thermique-n69123/">https://www.quechoisir.org/actualite-climatiseur-attention-au-choc-thermique-n69123/</a></li>
+<li>Picbleu, Fluides frigorigènes R410A, R32, R290 : <a href="https://picbleu.fr/les-articles/quel-fluide-frigorigene-choisir-pour-pompe-a-chaleur-r410a-r32-r290">https://picbleu.fr/les-articles/quel-fluide-frigorigene-choisir-pour-pompe-a-chaleur-r410a-r32-r290</a></li>
+<li>MaClim, R32 vs R290 : <a href="https://www.maclim.fr/r32-r290-co2-fluide/">https://www.maclim.fr/r32-r290-co2-fluide/</a></li>
+<li>Batirama, Règlement F-Gas et fin du R32 : <a href="https://www.batirama.com/article/70457-le-nouveau-reglement-europeen-f-gaz-hate-la-fin-du-r32-et-favorise-les-fluides-naturels.html">https://www.batirama.com/article/70457-le-nouveau-reglement-europeen-f-gaz-hate-la-fin-du-r32-et-favorise-les-fluides-naturels.html</a></li>
+<li>Ecologie.gouv.fr, FAQ fluides frigorigènes fluorés : <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/FAQ%20%20vf.pdf">https://www.ecologie.gouv.fr/sites/default/files/documents/FAQ%20%20vf.pdf</a></li>
+</ul>
+<p>Effet collectif et îlot de chaleur :</p>
+<ul>
+<li>de Munck et al. 2013, How much can air conditioning increase air temperatures for a city like Paris : <a href="https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/joc.3415">https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/joc.3415</a></li>
+<li>CNRS, Heatwaves in Paris, can we cope without air conditioning : <a href="https://www.cnrs.fr/en/press/heatwaves-paris-can-we-cope-without-air-conditioning">https://www.cnrs.fr/en/press/heatwaves-paris-can-we-cope-without-air-conditioning</a></li>
+<li>Météo-France, Cartographie de l'effet d'îlot de chaleur urbain : <a href="https://meteofrance.com/le-changement-climatique/les-bases-du-changement-climatique/cartographie-de-leffet-dilot-de-chaleur">https://meteofrance.com/le-changement-climatique/les-bases-du-changement-climatique/cartographie-de-leffet-dilot-de-chaleur</a></li>
+<li>CEREMA, Faire fondre les îlots de chaleur : <a href="https://www.cerema.fr/fr/actualites/faites-fondre-ilots-chaleur-cerema-presente-leviers-action">https://www.cerema.fr/fr/actualites/faites-fondre-ilots-chaleur-cerema-presente-leviers-action</a></li>
+</ul>
+<p>Gestes passifs, occultation, ventilation, refroidissement du corps :</p>
+<ul>
+<li>ADEME, Canicule, comment garder son logement frais : <a href="https://agirpourlatransition.ademe.fr/particuliers/proteger-sante/periode-canicule/canicule-comment-garder-logement-frais">https://agirpourlatransition.ademe.fr/particuliers/proteger-sante/periode-canicule/canicule-comment-garder-logement-frais</a></li>
+<li>ADEME, Tout savoir sur l'isolation : <a href="https://agirpourlatransition.ademe.fr/particuliers/amenager-maison/renover/tout-savoir-isolation">https://agirpourlatransition.ademe.fr/particuliers/amenager-maison/renover/tout-savoir-isolation</a></li>
+<li>Adaptaville (ADEME), Installer des protections solaires mobiles extérieures : <a href="https://www.adaptaville.fr/installer-des-protections-solaires-mobiles-exterieures">https://www.adaptaville.fr/installer-des-protections-solaires-mobiles-exterieures</a></li>
+<li>Sunscreen Mermet, Performance thermique et visuelle des tissus (norme EN 14501) : <a href="https://www.sunscreen-mermet.fr/support-technique/protection-solaire-performance-thermique-et-visuelle-des-tissus.html">https://www.sunscreen-mermet.fr/support-technique/protection-solaire-performance-thermique-et-visuelle-des-tissus.html</a></li>
+<li>IMMOBLADE, Comprendre le facteur solaire d'un vitrage : <a href="https://www.immoblade.com/articles/facteur-solaire">https://www.immoblade.com/articles/facteur-solaire</a></li>
+<li>Energie Plus, Protections solaires intérieures : <a href="https://energieplus-lesite.be/techniques/enveloppe7/composants-de-l-enveloppe/protections-solaires/protections-interieures/">https://energieplus-lesite.be/techniques/enveloppe7/composants-de-l-enveloppe/protections-solaires/protections-interieures/</a></li>
+<li>Étiket Bio, Blanc de Meudon sur les vitres anti-canicule : <a href="https://www.etiketbio.eu/blog/post/blanc-de-meudon-vitres-anti-canicule.html">https://www.etiketbio.eu/blog/post/blanc-de-meudon-vitres-anti-canicule.html</a></li>
+<li>Service Public, Canicule, se protéger : <a href="https://www.service-public.gouv.fr/particuliers/actualites/A14978">https://www.service-public.gouv.fr/particuliers/actualites/A14978</a></li>
+<li>ARS Île-de-France, Fortes chaleurs, comment se protéger : <a href="https://www.iledefrance.ars.sante.fr/fortes-chaleurs-et-canicule-comment-se-proteger">https://www.iledefrance.ars.sante.fr/fortes-chaleurs-et-canicule-comment-se-proteger</a></li>
+</ul>
+<p>Mythes (ventilateur, glace, plantes) :</p>
+<ul>
+<li>Futura Sciences, Les ventilateurs sont-ils inutiles (recommandations Santé publique France et OMS) : <a href="https://www.futura-sciences.com/maison/actualites/thermique-canicule-ventilateurs-sont-ils-inutiles-voici-recommandations-specialistes-135568/">https://www.futura-sciences.com/maison/actualites/thermique-canicule-ventilateurs-sont-ils-inutiles-voici-recommandations-specialistes-135568/</a></li>
+<li>OMS, Climate change, heat and health : <a href="https://www.who.int/news-room/fact-sheets/detail/climate-change-heat-and-health">https://www.who.int/news-room/fact-sheets/detail/climate-change-heat-and-health</a></li>
+<li>The Lancet Planetary Health 2024, revue critique des ventilateurs : <a href="https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(24)00030-5/fulltext">https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(24)00030-5/fulltext</a></li>
+<li>Selectra, La bouteille gelée devant le ventilateur : <a href="https://selectra.info/energie/actualites/marche/canicule-bouteille-gelee-ventilateur-astuce">https://selectra.info/energie/actualites/marche/canicule-bouteille-gelee-ventilateur-astuce</a></li>
+</ul>
+<p>Films solaires et couvertures de survie :</p>
+<ul>
+<li>ITD Technologie, Pose intérieure ou extérieure du film solaire : <a href="https://films.itdtechnologie.com/blog/pose-int%C3%A9rieure-ou-ext%C3%A9rieure-comment-choisir-le-bon-c%C3%B4t%C3%A9-pour-votre-film-solaire">https://films.itdtechnologie.com/blog/pose-int%C3%A9rieure-ou-ext%C3%A9rieure-comment-choisir-le-bon-c%C3%B4t%C3%A9-pour-votre-film-solaire</a></li>
+<li>WonderGlass, Film solaire, risque de casse de vitrage : <a href="https://www.wonderglass.fr/blog/film-solaire-risque-de-casse-de-vitrage/">https://www.wonderglass.fr/blog/film-solaire-risque-de-casse-de-vitrage/</a></li>
+<li>Tamo, Couverture de survie sur fenêtre, bonne idée ou danger : <a href="https://www.tamo.fr/blog/post/couverture-survie-fenetre-canicule/">https://www.tamo.fr/blog/post/couverture-survie-fenetre-canicule/</a></li>
+</ul>
+<p>Ordinateurs et électronique :</p>
+<ul>
+<li>Apple, spécifications Mac mini : <a href="https://www.apple.com/mac-mini/specs/">https://www.apple.com/mac-mini/specs/</a></li>
+<li>Apple Support, consommation et chaleur Mac mini : <a href="https://support.apple.com/en-us/103253">https://support.apple.com/en-us/103253</a></li>
+<li>NVIDIA, GeForce RTX 5090 : <a href="https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/">https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/</a></li>
+<li>Throttling CPU et GPU, seuils et perte de performance : <a href="https://gpubottleneckcalculator.com/blog/thermal-throttling-guide/">https://gpubottleneckcalculator.com/blog/thermal-throttling-guide/</a></li>
+<li>Tom's Hardware, MacBook Air sans ventilateur en surchauffe : <a href="https://www.tomshardware.com/laptops/macbooks/m3-macbook-air-hits-eye-popping-114-degrees-celsius-in-stress-test-and-didnt-melt">https://www.tomshardware.com/laptops/macbooks/m3-macbook-air-hits-eye-popping-114-degrees-celsius-in-stress-test-and-didnt-melt</a></li>
+<li>Battery University, charge à haute et basse température : <a href="https://www.batteryuniversity.com/article/bu-410-charging-at-high-and-low-temperatures/">https://www.batteryuniversity.com/article/bu-410-charging-at-high-and-low-temperatures/</a></li>
+<li>Ordinateur et conversion de l'électricité en chaleur : <a href="https://flameit.io/kb/faq/is-this-true-that-computers-convert-electrical-energy-into-heat">https://flameit.io/kb/faq/is-this-true-that-computers-convert-electrical-energy-into-heat</a></li>
+<li>Power limit RTX 4090, efficacité : <a href="https://www.tomshardware.com/news/improving-nvidia-rtx-4090-efficiency-through-power-limiting">https://www.tomshardware.com/news/improving-nvidia-rtx-4090-efficiency-through-power-limiting</a></li>
+</ul>
+<p>Rénovation, aides, droits, climat :</p>
+<ul>
+<li>Adaptaville, Peinture anti-chaleur en toiture (cool roof) : <a href="https://www.adaptaville.fr/peinture-anti-chaleur-toit">https://www.adaptaville.fr/peinture-anti-chaleur-toit</a></li>
+<li>France Rénov', MaPrimeRénov' Copropriété : <a href="https://france-renov.gouv.fr/aides/maprimerenov-copropriete">https://france-renov.gouv.fr/aides/maprimerenov-copropriete</a></li>
+<li>Ville de Paris, Plan de rénovation thermique : <a href="https://www.paris.fr/pages/plan-1000-immeubles-pour-la-renovation-thermique-3136">https://www.paris.fr/pages/plan-1000-immeubles-pour-la-renovation-thermique-3136</a></li>
+<li>Ville de Paris, La canicule, dispositifs : <a href="https://www.paris.fr/pages/la-canicule-5469">https://www.paris.fr/pages/la-canicule-5469</a></li>
+<li>Service Public, Décence énergétique : <a href="https://www.service-public.gouv.fr/particuliers/actualites/A17975">https://www.service-public.gouv.fr/particuliers/actualites/A17975</a></li>
+<li>Sowee, Isoler son logement quand on est locataire : <a href="https://www.sowee.fr/conseils/economie-energie/comment-isoler-son-logement-quand-on-est-locataire/">https://www.sowee.fr/conseils/economie-energie/comment-isoler-son-logement-quand-on-est-locataire/</a></li>
+<li>Météo-France, Quel climat en France en 2050 : <a href="https://meteofrance.com/le-changement-climatique/quel-climat-futur/rechauffement-climatique-quel-climat-en-france-en-2050">https://meteofrance.com/le-changement-climatique/quel-climat-futur/rechauffement-climatique-quel-climat-en-france-en-2050</a></li>
+</ul>
+<hr />
+<p><em>Note sur la fiabilité des chiffres. Les valeurs structurantes (potentiels de réchauffement des fluides, effet de la climatisation sur la température des rues, consigne de 26 °C et 7 % par degré, parts d'isolation de la toiture, seuils des ventilateurs, constantes physiques) proviennent de l'ADEME, du CNRS, de Météo-France, du CEREMA, de l'OMS, de Santé publique France, des services de l'État et de l'étude de Munck 2013. Les chiffres issus de fabricants ou de sites commerciaux (niveaux sonores, coûts horaires, pourcentages exacts des films solaires, baisse précise du badigeon de craie) sont donnés comme ordres de grandeur et signalés comme tels. Certaines valeurs précises de dégradation de batterie reposent sur des sources non institutionnelles et sont présentées en principe, pas en chiffre garanti. Aucune valeur n'a été inventée ; les fourchettes traduisent l'incertitude réelle.</em></p>
+<hr />
+<h2 id="réutiliser-et-partager-ce-guide">Réutiliser et partager ce guide</h2>
+<p>Ce guide est en accès libre. Il est fait pour circuler.</p>
+<ul>
+<li>Copiez-le, imprimez-le, affichez-le dans un hall ou sur un palier, traduisez-le, adaptez-le à votre immeuble.</li>
+<li>Corrigez-le et enrichissez-le : signalez une erreur ou proposez un ajout. Les sources priment toujours sur les avis.</li>
+<li>Réutilisez-le librement, y compris modifié, à condition de citer la source et de conserver la même licence ouverte.</li>
+</ul>
+<p>Licence : Creative Commons Attribution - Partage dans les mêmes conditions 4.0 (CC BY-SA 4.0). C'est la raison de cette mise en ligne ouverte : que chacun puisse s'en servir, l'imprimer et l'améliorer sans demander la permission, plutôt qu'un document figé que personne ne peut faire vivre.</p>
+<div class="meta">Genere depuis README.md — 2026-06-25 00:05</div></div>
+</body>
+</html>
