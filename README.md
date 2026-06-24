@@ -28,6 +28,16 @@ Le but est de garder le signal et d'enlever le bruit : on déboulonne explicitem
 
 ---
 
+## Affiche à imprimer pour votre immeuble
+
+Une affiche A4 prête à imprimer et à afficher dans les halls et sur les paliers, qui résume les gestes essentiels.
+
+![Affiche canicule, le mode d'emploi](affiche/affiche-canicule-moebius.png)
+
+Versions imprimables : [PDF A4](affiche/affiche-canicule-moebius.pdf) - [page web](affiche/affiche-canicule.html)
+
+---
+
 ## 1. Comprendre la chaleur en appartement
 
 Un appartement se réchauffe par trois mécanismes physiques.
