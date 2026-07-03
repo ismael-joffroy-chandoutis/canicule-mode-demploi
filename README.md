@@ -449,3 +449,5 @@ Ce guide est en accès libre. Il est fait pour circuler.
 - Réutilisez-le librement, y compris modifié, à condition de citer la source et de conserver la même licence ouverte.
 
 Licence : Creative Commons Attribution - Partage dans les mêmes conditions 4.0 (CC BY-SA 4.0). C'est la raison de cette mise en ligne ouverte : que chacun puisse s'en servir, l'imprimer et l'améliorer sans demander la permission, plutôt qu'un document figé que personne ne peut faire vivre.
+
+Par [Ismaël Joffroy Chandoutis](https://ismaeljoffroychandoutis.com).
